@@ -4,6 +4,7 @@ public enum Chars {
     lcase(range('a', 'z')),
     ucase(range('A', 'Z')),
     digit(range('0', '9')),
+    mixed(range('a', 'z') + range('A', 'Z') + range('0', '9')),
     symbol(range('!', '/') + range(':', '@') + range('[', '`') + range('{', '~')),
     all(range('a', 'z') + range('A', 'Z') + range('0', '9') + range('!', '/') + range(':', '@')
             + range('[', '`') + range('{', '~'));
