@@ -2,7 +2,6 @@ import checks.Entropy;
 import checks.HIBPCheck;
 import passgen.Chars;
 import passgen.PasswordGen;
-import utils.SHA1;
 
 import java.io.IOException;
 import java.security.NoSuchAlgorithmException;
@@ -21,8 +20,7 @@ public class Main {
 
     public static void demo(int len, Chars chars) throws IOException, NoSuchAlgorithmException {
         String password = PasswordGen.randomPassword(len, chars);
-        String hash = SHA1.hash(password);
-        int count = HIBPCheck.check(hash);
+        int count = HIBPCheck.check(password);
         int entropy = Entropy.calc(len, chars);
         System.out.println("Len: " + len + ", Chars: " + chars + ", Entropy: " + entropy + " bits, Count (haveibeenpwned.com): " + count + ", Password: " + password);
     }
