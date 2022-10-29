@@ -6,6 +6,9 @@ public enum Chars {
     digit(range('0', '9')),
     mixed(range('a', 'z') + range('A', 'Z') + range('0', '9')),
     symbol(range('!', '/') + range(':', '@') + range('[', '`') + range('{', '~')),
+    urlsafe(range('a', 'z') + range('A', 'Z') + range('0', '9') + ".-*_"),
+    binary("01"),
+    hex(range('0', '9') + range('a', 'f')),
     all(range('a', 'z') + range('A', 'Z') + range('0', '9') + range('!', '/') + range(':', '@')
             + range('[', '`') + range('{', '~'));
 
