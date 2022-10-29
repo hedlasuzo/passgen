@@ -1,6 +1,6 @@
 package passgen;
 
-public enum Chars {
+public enum CharGroup {
     lcase(range('a', 'z')),
     ucase(range('A', 'Z')),
     digit(range('0', '9')),
@@ -14,7 +14,7 @@ public enum Chars {
 
     private final String chars;
 
-    Chars(String chars) {
+    CharGroup(String chars) {
         this.chars = chars;
     }
 
