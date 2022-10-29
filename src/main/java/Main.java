@@ -1,3 +1,4 @@
+import checks.Entropy;
 import checks.HIBPCheck;
 import passgen.Chars;
 import passgen.PasswordGen;
@@ -22,6 +23,7 @@ public class Main {
         String password = PasswordGen.randomPassword(len, chars);
         String hash = SHA1.hash(password);
         int count = HIBPCheck.check(hash);
-        System.out.println("Len: " + len + ", Chars: " + chars + ", Count (haveibeenpwned.com): " + count + ", Password: " + password);
+        int entropy = Entropy.calc(len, chars);
+        System.out.println("Len: " + len + ", Chars: " + chars + ", Entropy: " + entropy + " bits, Count (haveibeenpwned.com): " + count + ", Password: " + password);
     }
 }
